@@ -130,6 +130,13 @@ genuinely absent):
   - Attachments: knobs, switches, buttons, dials, labels, logos, screws,
     hinges, latches. These add character even when tiny.
   - Caps and endings: bottle caps, pen caps, lid knobs, foot pads, tips.
+  - Signature surface details: engraved/carved patterns, stitch seams,
+    perforation holes, tile/stripe layouts, shutter/vent slats, branding
+    marks, ruler ticks, dial markers. Include salient ones as parts or call
+    them out in the relevant narrative.
+  - Color-value critical zones: light metals vs dark metals, translucent
+    liquids vs tinted glass, and contrasting trim bands. Mention target hue
+    and lightness (and hex when confident).
 
 ## Rules
 

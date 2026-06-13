@@ -227,31 +227,23 @@ Proportion tuning shortcut:
   `mesh.scale.set(sx, sy, sz)` BEFORE adding to group, NOT rebuilding the
   geometry with new params. Rebuilding is necessary only when the primitive
   type itself must change (e.g. cylinder → cone, box → extrude).
+
+High-frequency failure prevention checklist:
+- Lock silhouette first with 3-6 global dimensions; keep mirrored pairs exact.
+- Add cheap proxy geometry for signature details (logos/text, carved bands,
+  seams/stitches, perforations, latches, mirrors, propellers, trim rings).
+- Avoid flat simplification when texture cues are obvious; use grooves, seam
+  tubes, slit rows, and color bands to preserve surface read.
+- Keep color value accurate for sensitive classes (light silver stays light;
+  glass/liquid hue and brightness should match reference).
+- If exact modeling is expensive, use the lowest-cost geometry that preserves
+  detail count, placement, and recognizability.
 """
     + "\n\n---\n\n"
     + THREEJS_OUTPUT_SPEC_REFERENCE
     + "\n\n---\n\n"
     + THREEJS_PRIMITIVE_REFERENCE
 )
-
-
-CODER_USER_TEMPLATE_IMAGE_ONLY = """Reproduce the 3D object shown in the attached reference image
-as a Three.js module.
-
-There is no OSD — read the reference directly and decide on the object
-class, part hierarchy, counts, materials, and colors yourself. Apply the
-same conventions you would when an OSD is provided:
-
-- Name your top-level mesh / group consts after the parts you identify
-  (lowercase, underscores). The visual critic uses those names in later
-  repair rounds.
-- Pick PBR params from the material normalization quick-reference in your
-  system prompt — don't improvise metalness/roughness.
-- Call your `fitToUnitCube` helper with `0.95 / maxDim` so the object
-  fills ~95% of the frame.
-
-Return ONLY the JS module source.
-"""
 
 
 CODER_USER_TEMPLATE_OSD = """Object Structural Description (OSD):
@@ -274,6 +266,9 @@ Reminders before you write:
 - If this is a vehicle, use the vehicle modeling playbook: set shared
   dimensions first, keep front +Z / Y-up / width X, attach all major parts,
   and prioritize correct wheel/rotor/wing count and orientation before trim.
+- Preserve signature fine details from the reference when they are visually
+  important (logos/text, carved bands, seams, perforations, vents, straps,
+  shutters, tile patterns, blade guards). Use low-poly proxies if needed.
 - Call your `fitToUnitCube` helper with `0.95 / maxDim` so the object
   fills ~95% of the frame (not lost in background).
 
@@ -297,6 +292,9 @@ Reminders before you write:
 - If this is a vehicle, use the vehicle modeling playbook: set shared
   dimensions first, keep front +Z / Y-up / width X, attach all major parts,
   and prioritize correct wheel/rotor/wing count and orientation before trim.
+- Preserve signature fine details from the reference when they are visually
+  important (logos/text, carved bands, seams, perforations, vents, straps,
+  shutters, tile patterns, blade guards). Use low-poly proxies if needed.
 - Call your `fitToUnitCube` helper with `0.95 / maxDim` so the object
   fills ~95% of the frame (not lost in background).
 

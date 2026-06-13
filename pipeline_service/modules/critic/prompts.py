@@ -71,6 +71,17 @@ Every issue.description should include (where visible):
 - A direction ("shorter" / "wider" / "darker" / "closer to the base").
 - Which region of the object ("upper front", "bottom ring").
 
+Common regression checks (high value):
+- Treat distorted silhouette or wrong major proportion as highest priority.
+- Treat missing identity details as impactful: logos/text, carved bands,
+  seams/stitches, perforations, shutters/vents, guards, mirrors, propellers.
+- Treat major color-value drift as impactful, not cosmetic, when it changes
+  class perception (e.g. silver/light-gray rendered near-black).
+- Treat flat/simplified surfaces as wrong_material when the reference clearly
+  shows strong texture cues (wood grain, stitch bands, woven segmentation).
+- If two candidates are structurally similar, spend remaining issue budget on
+  these signature texture/detail mismatches instead of generic wording.
+
 Vehicle issue priority:
 - Treat disconnected major vehicle assemblies as high severity: wings
   floating above a fuselage, wheels detached from body/forks, rotors not at

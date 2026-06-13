@@ -23,6 +23,10 @@ In priority order (top of list dominates ties):
   5. Decorations and small details: trim, knobs, labels — only when 1-4
      are clearly tied.
 
+When 1-3 are close, prefer the candidate with better signature details
+(logos/text, carved bands, seams, perforations, shutters/vents, mirrors,
+propellers, trim rings). These can decide recognizability.
+
 Cosmetic differences (slight pose, slight scale, lighting) are NOT
 deciding factors. Pick the candidate whose 3D structure is closer.
 
